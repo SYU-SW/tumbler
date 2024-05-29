@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>주소 정보</title>
+</head>
+<body>
+<h1>주소 정보</h1>
+<form th:action="@{/auth/additionalInfoAddress}" method="post">
+    <label for="zipcode">우편번호:</label><br>
+    <input type="text" id="zipcode" name="zipcode"><br>
+    <label for="addr">주소:</label><br>
+    <input type="text" id="addr" name="addr"><br>
+    <label for="addrDetail">상세 주소:</label><br>
+    <input type="text" id="addrDetail" name="addrDetail"><br>
+    <button type="submit">제출</button>
+</form>
+</body>
+</html>

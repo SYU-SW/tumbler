@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Role 선택</title>
+</head>
+<body>
+<h1>Role 선택</h1>
+<form th:action="@{/auth/chooseRole}" method="post">
+    <input type="radio" id="user" name="role" value="USER">
+    <label for="user">사용자</label><br>
+    <input type="radio" id="admin" name="role" value="ADMIN">
+    <label for="admin">관리자</label><br>
+    <button type="submit">다음</button>
+</form>
+</body>
+</html>

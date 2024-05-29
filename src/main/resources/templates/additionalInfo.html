@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>추가 정보</title>
+</head>
+<body>
+<h1>추가 정보</h1>
+<form th:action="@{/auth/additionalInfo}" method="post">
+    <label for="phoneNumber">전화번호:</label><br>
+    <input type="text" id="phoneNumber" name="phoneNumber"><br>
+    <button type="submit">다음</button>
+</form>
+</body>
+</html>
