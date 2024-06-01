@@ -4,10 +4,6 @@ spring:
       host: localhost
       port: 27017
       database: shop
-      authentication-database: admin
-      username: root
-      password: 1111
-      uri: mongodb://root:1111@localhost:27017/shop?authSource=admin
   security:
     oauth2:
       client:

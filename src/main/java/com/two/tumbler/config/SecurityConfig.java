@@ -23,7 +23,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/auth/**", "/oauth2/**", "/css/**", "/js/**").permitAll()
+                                .requestMatchers("/api/**","/auth/**", "/oauth2/**", "/css/**", "/js/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .oauth2Login(oauth2Login ->
