@@ -2,6 +2,7 @@ package com.two.tumbler.controller;
 
 import com.two.tumbler.model.Cart;
 import com.two.tumbler.model.CartItem;
+import com.two.tumbler.model.CartItemRequest;
 import com.two.tumbler.service.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +18,8 @@ public class CartController {
     private final CartService cartService;
 
     @PostMapping("/add")
-    public ResponseEntity<Cart> addToCart(@RequestParam String userId, @RequestParam String productId, @RequestParam int quantity) {
-        Cart cart = cartService.addToCart(userId, productId, quantity);
+    public ResponseEntity<Cart> addToCart(@RequestBody CartItemRequest request) {
+        Cart cart = cartService.addToCart(request.getUserId(), request.getProductId(), request.getQuantity());
         return ResponseEntity.ok(cart);
     }
 

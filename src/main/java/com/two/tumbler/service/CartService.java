@@ -59,11 +59,14 @@ public class CartService {
         CartItem cartItem = cartItemRepository.findById(cartItemId)
                 .orElseThrow(() -> new RuntimeException("Cart item not found with id: " + cartItemId));
 
-        cart.removeCartItem(cartItem);
+        // 카트에서 카트 아이템을 제거
+        cart.getCartItems().removeIf(item -> item.getId().equals(cartItemId));
         cartRepository.save(cart);
+
+        // 카트 아이템을 제거
         cartItemRepository.delete(cartItem);
 
-        return cartRepository.save(cart);
+        return cart;
     }
 
     public List<CartItem> getCartItemsByUserId(String userId) {
