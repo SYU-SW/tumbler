@@ -4,6 +4,7 @@ spring:
       host: localhost
       port: 27017
       database: shop
+      uri: ${MONGO_CONFIG}
   security:
     oauth2:
       client:
@@ -23,7 +24,7 @@ spring:
               - profile_image
             client-name: Naver
             authorization-grant-type: authorization_code
-            redirect-uri: "http://localhost:8080/login/oauth2/code/naver"
+            redirect-uri: "http://43.201.247.108:8080/login/oauth2/code/naver"
         provider:
           naver:
             authorization-uri: https://nid.naver.com/oauth2.0/authorize
